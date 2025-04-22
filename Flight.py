@@ -30,10 +30,10 @@ class Flight(ABC):
         pass
 
     def booking(self, name):
+        self.__validate_date()
+
         if name is None or name == "":
             raise ValueError("Name can't be empty or blank")
-        if self.__date < datetime.now():
-            raise ValueError("The booking time is invalid. Please select a future date.")
 
         seat_number = self.__get_first_free_seat()
         self.__seats[seat_number] = name
@@ -41,6 +41,7 @@ class Flight(ABC):
         return seat_number, self.__seat_price
 
     def cancel_booking(self, seat_number):
+        self.__validate_date()
         if seat_number < 1 or seat_number > self.__seats_number:
             raise ValueError(
                 f"Seat number not belong to any reservation it must be between: {1} - {self.__seats_number}")
@@ -78,6 +79,10 @@ class Flight(ABC):
             if person_name == "":
                 return seat_number
         raise ValueError("No more empty seats lef")
+
+    def __validate_date(self):
+        if self.__date < datetime.now():
+            raise ValueError("The booking time is invalid. Please select a future date.")
 
     @staticmethod
     def __generate_flight_number(monogram):
