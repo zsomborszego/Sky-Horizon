@@ -1,3 +1,8 @@
 neptun_kód: GSJI4B
 szak: Mérnökinformatikus
 név: Szegő Zsombor
+
+Járatatok
+SH-80879 (Lehet jegyet foglalni)
+SH-80889 (Lehet jegyet foglalni)
+SH-80909 (Nem lehet jegyet foglalni 2024-01-01-es járat)
