@@ -1,0 +1,3 @@
+neptun_kód: GSJI4B
+szak: Mérnökinformatikus
+név: Szegő Zsombor
